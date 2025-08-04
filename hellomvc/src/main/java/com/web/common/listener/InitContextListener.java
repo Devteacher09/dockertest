@@ -27,7 +27,11 @@ public class InitContextListener implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent sce)  { 
-        new AESEncryptor();
+        try {
+        	new AESEncryptor();
+        }catch(Exception e) {
+        	e.printStackTrace();
+        }
     }
 	
 }
